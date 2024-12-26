@@ -43,7 +43,8 @@ export default function Header(){
         <>
         <div className='black-overlay w-full h-full fixed duration-500' onClick={hideSideMenu} style={{
             opacity: toggle ? 1 : 0,
-            visibility:toggle?"visible" : "hidden"
+            visibility:toggle?"visible" : "hidden",
+            zIndex:99999999999999
         }}>
             <div onClick={(e) =>{
                 e.stopPropagation();
@@ -53,19 +54,53 @@ export default function Header(){
                 left: toggle?"visible" :"hidden6"
                }}
             
-            ></div>
-        </div>
-        <header className='p-[15px] shadow-xl text-[#686b78]'>
+            >
+               <div>
+                   
+                   
+                      <section id="about" class="bg-gray-100 py-10">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
+    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+      Hi, I'm <strong>Shashi</strong>, the creator behind this website! I'm passionate about using technology to solve real-world problems and enhance user experiences. With a background in software development and a keen interest in Artificial Intelligence. 
+    </p>
+    <div className='flex gap-3'>
+    <div class="text-center mt-6">
+      <a href="https://www.linkedin.com/in/shashi-kumar-b7a14226b/" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">LinkedIn</a>
+    </div>
+    <div class="text-center mt-6">
+      <a href="https://www.instagram.com/shashi_sk__143/" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Instagram</a>
+    </div>
+    <div class="text-center mt-6">
+      <a href="9490059011" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Contact Me</a>
+    </div>
+
+    </div>
+    
+  </div>
+</section>
+
+      
+               
+ </div>
+        
+
+
+                </div>     
+
+                </div>
+        <header className='p-[15px] shadow-xl text-[#686b78] sticky top-0 bg-white z-[9999]'>
             <div className='max-w-[1200px] mx-auto  flex items-center'>
                 <div className='w-[100px]'>
                     <img src="images/logo.png"  className='w-full'alt="" />
                     </div>
                     <div className=''>
-                    <span className='font-bold '>Othars </span>     
-                      Othars<RxCaretDown onClick={showSideMenu} fontSize={25} className='inline text-[#fc8019]
+                    <span className='font-bold '>About me </span>     
+                      "Shashi"<RxCaretDown onClick={showSideMenu} fontSize={25} className='inline text-[#fc8019]
                       cursor-pointer'/>
                     </div>
-                    <nav className='flex list-none gap-10  ml-auto font-semibold text-[18px]'>
+                    <nav className='hidden md:flex list-none gap-10  ml-auto font-semibold text-[18px]'>
+                       
                         {
                             links.map(
                                 (link, index) =>{
@@ -80,7 +115,7 @@ export default function Header(){
 
 
                         }
-                        
+                      
                       
                         
                     </nav>
